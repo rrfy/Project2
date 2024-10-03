@@ -14,7 +14,6 @@ type Moveable interface{
 type GameUnit struct {
 	id int
 	Name   string
-    Hp    int
     X int
 	Y int
 }
@@ -64,6 +63,7 @@ func (u *Unit) Move(){
 	u.Y += 1
 }
 
+
 type Structure struct {
 	base GameUnit
 	Built bool
@@ -73,6 +73,7 @@ func (s *Structure) int IsBuilt{
 	return Built
 }
 
+
 type Fort struct {
 	base Structure
 	attc int
@@ -81,6 +82,7 @@ type Fort struct {
 func (f *Fort) Attack(at Unit) {
 	at.ReceiveDamage(f.attc)
 }
+
 
 type MobileHouse struct {
 	base Structure
